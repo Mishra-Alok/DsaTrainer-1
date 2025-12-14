@@ -17,7 +17,7 @@ app.use(cors({
 
 // set session for all users
 sessionMiddleware = session({
-  secret: process.env.SESSION_SECRET, // Load secret from environment
+  secret: process.env.SESSION_SECRET || "8fhgdsf7ufgyri37ysefgyeyyyyyyyyyyyeyyeyey", // Load secret from environment
   resave: false,
   saveUninitialized: false, // Only save sessions when there’s data
   cookie: {
@@ -115,13 +115,13 @@ app.use('/', require('./router/upload'));
 
 // serve the home page
 app.get('/', (req, res) => {
-    req.session.login = true;
-    req.session.idd = 1;
-    req.session.admin = true;
-    req.session.userurl = "1_username";
-    req.session.email = "amantaycon@gmail.com";
-    req.session.fullname = "";
-    req.session.themename = "defaulthemes.css";
+    // req.session.login = true;
+    // req.session.idd = 1;
+    // req.session.admin = true;
+    // req.session.userurl = "1_username";
+    // req.session.email = "alokmishra.patna@gmail.com";
+    // req.session.fullname = "";
+    // req.session.themename = "defaulthemes.css";
 
 
   var sql = `SELECT * FROM headerlist ORDER BY id ASC`; // Ensures correct order

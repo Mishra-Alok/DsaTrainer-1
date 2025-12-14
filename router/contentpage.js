@@ -10,6 +10,8 @@ app.get('*', (req, res) => {
     let path = req.path.substring(1); // Remove leading '/'
     // Allow search for both `/content/data` and `content/data`
     let altPath = path.startsWith('/') ? path.substring(1) : `/${path}`;
+    
+    console.log(path, '  :  ', altPath);
 
     let id = req.query.id || 1; // Default id to 1 if not provided
     var sql = 'SELECT * FROM sub_header WHERE (link = ? OR link = ?)';
